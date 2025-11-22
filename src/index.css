@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ActiveLearn Hub Design System - Modern Educational Platform
+All colors MUST be HSL for consistency.
+*/
+
+@layer base {
+  :root {
+    /* Light Mode - Clean and bright for focused learning */
+    --background: 0 0% 98%;
+    --foreground: 230 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 15% 15%;
+
+    --primary: 240 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 240 100% 75%;
+
+    --secondary: 230 20% 95%;
+    --secondary-foreground: 230 15% 25%;
+
+    --muted: 230 15% 95%;
+    --muted-foreground: 230 10% 50%;
+
+    --accent: 270 95% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 140 70% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 35 90% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 15% 85%;
+    --input: 230 15% 90%;
+    --ring: 240 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(240 100% 65%), hsl(270 95% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(230 20% 95%), hsl(0 0% 100%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 100% 25%), hsl(270 95% 35%));
+    
+    --shadow-card: 0 4px 20px -2px hsl(240 100% 65% / 0.1);
+    --shadow-elevated: 0 8px 30px -4px hsl(240 100% 65% / 0.15);
+    --shadow-glow: 0 0 40px hsl(240 100% 75% / 0.3);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode - Modern dark theme for focus and reduced eye strain */
+    --background: 230 25% 8%;
+    --foreground: 230 15% 95%;
+
+    --card: 230 20% 12%;
+    --card-foreground: 230 15% 95%;
+
+    --popover: 230 20% 12%;
+    --popover-foreground: 230 15% 95%;
+
+    --primary: 240 100% 70%;
+    --primary-foreground: 230 25% 8%;
+    --primary-glow: 240 100% 80%;
+
+    --secondary: 230 15% 18%;
+    --secondary-foreground: 230 15% 85%;
+
+    --muted: 230 15% 15%;
+    --muted-foreground: 230 10% 60%;
+
+    --accent: 270 95% 75%;
+    --accent-foreground: 230 25% 8%;
+
+    --success: 140 70% 55%;
+    --success-foreground: 230 25% 8%;
+
+    --warning: 35 90% 65%;
+    --warning-foreground: 230 25% 8%;
+
+    --destructive: 0 85% 65%;
+    --destructive-foreground: 230 25% 8%;
+
+    --border: 230 15% 20%;
+    --input: 230 15% 15%;
+    --ring: 240 100% 70%;
+
+    /* Dark Mode Custom Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(240 100% 70%), hsl(270 95% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(230 20% 12%), hsl(230 15% 18%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 100% 30%), hsl(270 95% 40%));
+    
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 8px 30px -4px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(240 100% 70% / 0.2);
+
+    --sidebar-background: 230 20% 10%;
+    --sidebar-foreground: 230 15% 85%;
+    --sidebar-primary: 240 100% 70%;
+    --sidebar-primary-foreground: 230 25% 8%;
+    --sidebar-accent: 230 15% 15%;
+    --sidebar-accent-foreground: 230 15% 85%;
+    --sidebar-border: 230 15% 18%;
+    --sidebar-ring: 240 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    transition: var(--transition-smooth);
+  }
+}
+
+@layer components {
+  /* Hero Section Utilities */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  /* Card Utilities */
+  .card-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .card-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Interactive Elements */
+  .interactive-scale {
+    transition: var(--transition-smooth);
+  }
+  
+  @media (hover: hover) {
+    .interactive-scale:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  .interactive-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  @media (hover: hover) {
+    .interactive-bounce:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Mobile Touch Targets */
+  @media (max-width: 640px) {
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Disable hover effects on mobile */
+    .interactive-scale:hover {
+      transform: none;
+    }
+    
+    .interactive-bounce:hover {
+      transform: none;
+    }
+  }
+
+  /* Progress Indicators */
+  .progress-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
+    }
+    
+    /* Prevent layout shift */
+    .fixed-mobile {
+      position: fixed !important;
+      width: 100vw !important;
+    }
+    
+    /* Safe areas for mobile */
+    .safe-top {
+      padding-top: env(safe-area-inset-top);
+    }
+    
+    .safe-bottom {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    /* Prevent horizontal scroll */
+    .no-scroll-x {
+      overflow-x: hidden;
+    }
+  }
+}
